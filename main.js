@@ -1,10 +1,12 @@
+const $arenas = document.querySelector('.arenas');
+
 const player1 = {
     name: 'Sonya',
     hp: 100,
     img: 'http://reactmarathon-api.herokuapp.com/assets/sonya.gif',
     weapon: ['Some weapon'],
-    attack: function(name) {
-        console.log(name + ' ' + 'Fight...');
+    attack: function() {
+        console.log(this.name + ' ' + 'Fight...');
     }
 };
 
@@ -13,17 +15,15 @@ const player2 = {
     hp: 100,
     img: 'http://reactmarathon-api.herokuapp.com/assets/subzero.gif',
     weapon: ['Some other weapon'],
-    attack: function(name) {
-        console.log(name + ' ' + 'Fight...');
+    attack: function() {
+        console.log(this.name + ' ' + 'Fight...');
     }
 };
 
-player1.attack(player1.name);
-player2.attack(player2.name);
+player1.attack();
+player2.attack();
 
 function createPlayer(position, character) {
-    const $arenas = document.querySelector('.arenas');
-
     const $player = document.createElement('div');
     $player.classList.add(position);
 
